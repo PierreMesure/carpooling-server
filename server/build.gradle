@@ -1,0 +1,31 @@
+group 'se.collectivesunshine'
+version '0.1'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'se.collectivesunshine.Main'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext.springVersion = '5.0.0.RELEASE'
+ext.hibernateVersion = '5.2.11.Final'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-tx:$springVersion"
+    compile "org.springframework:spring-orm:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.hibernate:hibernate-core:$hibernateVersion"
+    compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
+    compile "org.apache.commons:commons-dbcp2:2.1.1"
+    compile 'mysql:mysql-connector-java:8.0.8-dmr'
+
+    compileOnly 'org.projectlombok:lombok:1.16.18'
+}
